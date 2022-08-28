@@ -7,7 +7,7 @@
   "engines": {
     "node": "16"
   },
-  "main": ".eslintrc.js",
+  "main": "index.ts",
   "scripts": {
     "format": "prettier --write \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\"",
     "lint": "eslint \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" --fix",

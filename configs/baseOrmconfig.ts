@@ -1,8 +1,6 @@
-import { DataSourceOptions } from 'typeorm';
-
-export const baseOrmconfig: DataSourceOptions = {
+export const baseOrmconfig = {
   type: 'postgres',
   useUTC: true,
   synchronize: false,
   migrationsRun: true,
-};
+} as const;

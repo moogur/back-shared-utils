@@ -1,5 +1,7 @@
+import { WorkModeEnum } from 'types';
+
 interface GetCacheConfig {
-  mode: string;
+  mode?: WorkModeEnum;
   socketPath?: string;
   url?: string;
   password?: string;
@@ -12,7 +14,7 @@ export function getCacheConfig({ mode, socketPath, password, url }: GetCacheConf
   };
 
   switch (true) {
-    case mode !== 'test':
+    case !mode || mode === WorkModeEnum.Test:
       return false;
     case Boolean(socketPath):
       return {

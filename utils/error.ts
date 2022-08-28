@@ -7,7 +7,7 @@ export function getValidationErrorMessageForResponseFront(
   errors: ValidationError[] | Record<string, string | string[]>,
 ) {
   const convertedErrors = isArray(errors)
-    ? reduce<ValidationError, { [key in string]: string[] }>(
+    ? reduce<ValidationError, Record<string, string[]>>(
         errors,
         (accumulator, error) => {
           accumulator[error.property] = values(error.constraints);

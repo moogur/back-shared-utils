@@ -1,11 +1,11 @@
 {
   "files.exclude": {
-    // ".git": true,
+    ".git": true,
     // ".github": true,
-    // ".husky": true,
-    // "node_modules": true,
-    // "README.md": true,
-    // ".idea": true
+    ".husky": true,
+    "node_modules": true,
+    "README.md": true,
+    ".idea": true
   },
   // todo color theme customization
   // "workbench.colorCustomizations": {

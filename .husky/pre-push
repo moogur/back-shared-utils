@@ -20,10 +20,11 @@ function validateTaskNumber() {
   local VALUE=$1
   local BRANCH_NAME=$2
 
-  local REGEXP="^[A-Z]+-[0-9]+$"
+  local REGEXP="^UTL-[0-9]+$"
   if [[ ! "$VALUE" =~ $REGEXP ]]; then
     echo "The branch name has the wrong task name"
     echo "task number = $VALUE"
+    echo "need format UTL-[0-9]+"
     echo "branch = $BRANCH_NAME"
     exit 1
   fi

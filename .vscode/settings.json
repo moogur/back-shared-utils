@@ -4,7 +4,6 @@
     ".husky": true,
     "node_modules": true,
     "README.md": true,
-    "coverage": true,
     ".idea": true
   },
   // todo color theme customization

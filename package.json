@@ -9,9 +9,6 @@
   },
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest --config ./jest.config.ts",
-    "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --collectCoverage",
     "format": "prettier --write \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\"",
     "lint": "eslint \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" --fix",
     "pre-commit": "lint-staged",

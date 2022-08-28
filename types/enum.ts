@@ -15,6 +15,11 @@ export enum WorkModeEnum {
   Development = 'DEVELOPMENT',
 }
 
+export enum UserEnum {
+  User = 'USER',
+  Admin = 'ADMIN',
+}
+
 export enum ProcessEnvironmentKeys {
   PORT = 'PORT',
   DB_HOST = 'DB_HOST',

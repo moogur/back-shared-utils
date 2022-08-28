@@ -11,7 +11,7 @@ export function exec(command: string) {
   }
 }
 
-export function setVariablesOutOfFile(content: string) {
+export function setVariablesOutOfEnvironmentString(content: string) {
   const lines = split(content, '\n');
   forEach(lines, (line) => {
     const trimmedLine = trim(line);
@@ -27,7 +27,7 @@ export function setEnvironments(filePaths: string[]) {
   forEach(filePaths, (filePath) => {
     try {
       const content = readFileSync(filePath, 'utf8');
-      setVariablesOutOfFile(content);
+      setVariablesOutOfEnvironmentString(content);
     } catch (error) {
       console.log(error);
       throw error;

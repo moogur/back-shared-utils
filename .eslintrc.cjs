@@ -14,7 +14,7 @@ module.exports = {
     'no-loops',
     'promise',
     'no-use-extend-native',
-    "lodash",
+    'lodash',
   ],
   extends: [
     'airbnb-typescript/base',
@@ -25,16 +25,16 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:promise/recommended',
-    "plugin:lodash/recommended",
+    'plugin:lodash/recommended',
   ],
   root: true,
   env: {
     es6: true,
     node: true,
   },
-  ignorePatterns: ['.eslintrc.js', 'node_modules'],
+  ignorePatterns: ['.eslintrc.cjs', 'node_modules'],
   settings: {
-    'import/internal-regex': '^(src|mocks|env|shared|modules)/',
+    'import/internal-regex': '^(const|dto|entity|exceptions|pipes|swagger|types|utils|validation|modules|configs)/?',
     'import/ignore': ['node_modules'],
   },
   rules: {
@@ -49,32 +49,30 @@ module.exports = {
     'no-undefined': 'error',
     'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }],
 
-    'import/extensions': 'off',
+    // they do not work correctly with some dto descriptions
+    '@typescript-eslint/no-unused-vars': 'off',
+    'import/named': 'off',
+    'import/export': 'off',
+    // 'import/extensions': ['.ts'],
+
     'import/no-unresolved': 'off',
     'import/order': [
-      'error', {
-        'groups': [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          ['sibling', 'index'],
-          'type',
-          'object'
-        ],
-        'alphabetize': {
-          'order': 'asc',
-          'caseInsensitive': false
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', ['sibling', 'index'], 'type', 'object'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
         },
-        'newlines-between': 'always'
-      }
+        'newlines-between': 'always',
+      },
     ],
 
     // only for node version bette 16
-    'unicorn/prefer-node-protocol': ['error', { 'checkRequire': true }],
+    'unicorn/prefer-node-protocol': ['error', { checkRequire: true }],
     // for node version 14 and low
     // 'unicorn/prefer-node-protocol': 'off',
-    'unicorn/prevent-abbreviations': ['error', { 'checkFilenames': false }],
+    'unicorn/prevent-abbreviations': ['error', { checkFilenames: false }],
     'unicorn/no-array-for-each': 'off',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-null': 'off',
@@ -87,8 +85,8 @@ module.exports = {
     'no-loops/no-loops': 2,
     'no-use-extend-native/no-use-extend-native': 2,
 
-    'lodash/import-scope': [2, "member"],
+    'lodash/import-scope': [2, 'member'],
     'lodash/prefer-lodash-typecheck': 'off',
-    'lodash/matches-shorthand': [2, "never"],
+    'lodash/matches-shorthand': [2, 'never'],
   },
 };

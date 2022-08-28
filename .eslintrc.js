@@ -34,7 +34,7 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js', 'node_modules'],
   settings: {
-    'import/internal-regex': '^(const|dto|entity|exceptions|pipes|swagger|types|utils|validation)/?',
+    'import/internal-regex': '^(const|dto|entity|exceptions|pipes|swagger|types|utils|validation|modules|configs)/?',
     'import/ignore': ['node_modules'],
   },
   rules: {
@@ -51,8 +51,10 @@ module.exports = {
 
     // they do not work correctly with some dto descriptions
     "@typescript-eslint/no-unused-vars": "off",
+    'import/named': 'off',
+    'import/export': 'off',
+    // 'import/extensions': ['.ts'],
 
-    'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'import/order': [
       'error', {

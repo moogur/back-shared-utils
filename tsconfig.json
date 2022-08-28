@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig-checks.json",
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "declaration": true,
     "removeComments": true,

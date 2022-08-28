@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     ".git": true,
-    // ".github": true,
+    ".github": true,
     ".husky": true,
     "node_modules": true,
     "README.md": true,

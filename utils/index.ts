@@ -6,3 +6,4 @@ export * from './error';
 export * from './table';
 export * from './swagger';
 export * from './date';
+export * from './configs';

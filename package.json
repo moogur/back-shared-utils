@@ -8,8 +8,8 @@
   },
   "main": ".eslintrc.js",
   "scripts": {
-    "format": "prettier --write \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation}/**/*.ts\" \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation}/**/*.ts\"",
-    "lint": "eslint \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation}/**/*.ts\" --fix",
+    "format": "prettier --write \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\"",
+    "lint": "eslint \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" --fix",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
@@ -55,7 +55,7 @@
     "typeorm": "^0.3.8"
   },
   "lint-staged": {
-    "{const,dto,entity,exceptions,pipes,swagger,types,utils,validation}/**/*.{ts,json}": [
+    "{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.{ts,json}": [
       "npm run lint",
       "npm run format"
     ]

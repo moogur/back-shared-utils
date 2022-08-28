@@ -11,5 +11,7 @@
 .eslintrc.cjs
 .prettierrc
 
-.tsconfig.json
-.tsconfig-checks.json
+package-lock.json
+
+tsconfig.json
+tsconfig-checks.json

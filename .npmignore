@@ -1,0 +1,15 @@
+.github
+.husky
+
+.vscode
+
+.eslintignore
+.prettierignore
+.gitignore
+
+.editorconfig
+.eslintrc.cjs
+.prettierrc
+
+.tsconfig.json
+.tsconfig-checks.json

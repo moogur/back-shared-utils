@@ -1,10 +1,10 @@
 {
   "files.exclude": {
     ".git": true,
-    ".github": true,
     ".husky": true,
     "node_modules": true,
     "README.md": true,
+    "coverage": true,
     ".idea": true
   },
   // todo color theme customization

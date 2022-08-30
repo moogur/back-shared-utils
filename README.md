@@ -66,6 +66,7 @@
 - `ActionWithFileException` - используется, в случае, ошибок с файловой системой
 - `NoValidServiceTokenException` - используется, если системный токен не валиден
 - `NoValidUserTokenException` - используется, если пользовательский или админский токен не валиден
+- `DecodeTokenException` - используется, если произошла ошибка при декодировании токена
 
 ### `modules`
 

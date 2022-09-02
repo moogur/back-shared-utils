@@ -107,5 +107,7 @@ fi
 
 ### lint and prettier checks
 npm run build
-git add ../lib/*
+
+path=$(pwd)
+git add "$path/../lib/*"
 npm run pre-commit

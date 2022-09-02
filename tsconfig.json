@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig-checks.json",
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -18,12 +17,45 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
+    "outDir": "lib",
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitUseStrict": false,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "noStrictGenericChecks": false,
     "typeRoots": [
       "node_modules/@types",
       "manual-typings"
     ],
+    "paths": {
+      "const": ["src/const"],
+      "dto": ["src/dto"],
+      "entity": ["src/entity"],
+      "exceptions": ["src/exceptions"],
+      "pipes": ["src/pipes"],
+      "swagger": ["src/swagger"],
+      "types": ["src/types"],
+      "utils": ["src/utils"],
+      "validation": ["src/validation"],
+      "modules": ["src/modules"],
+      "configs": ["src/configs"]
+    }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib"
   ]
 }

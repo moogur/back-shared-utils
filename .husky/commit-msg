@@ -109,5 +109,5 @@ fi
 npm run build
 
 path=$(pwd)
-git add "$path/../lib/*"
+git add "$path/lib/*"
 npm run pre-commit

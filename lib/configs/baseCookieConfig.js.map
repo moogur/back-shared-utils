@@ -1,1 +1,1 @@
-{"version":3,"file":"baseCookieConfig.js","sourceRoot":"","sources":["../../src/configs/baseCookieConfig.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,gBAAgB,GAAG;IAC9B,QAAQ,EAAE,IAAI;IACd,IAAI,EAAE,GAAG;IACT,QAAQ,EAAE,QAAQ;CACV,CAAC"}
+{"version":3,"file":"baseCookieConfig.js","sourceRoot":"","sources":["../../src/configs/baseCookieConfig.ts"],"names":[],"mappings":";;;AAAa,QAAA,gBAAgB,GAAG;IAC9B,QAAQ,EAAE,IAAI;IACd,IAAI,EAAE,GAAG;IACT,QAAQ,EAAE,QAAQ;CACV,CAAC"}

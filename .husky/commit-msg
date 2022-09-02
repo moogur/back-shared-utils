@@ -107,5 +107,5 @@ fi
 
 ### lint and prettier checks
 npm run build
-git add ../lib
+git add ../lib/*
 npm run pre-commit

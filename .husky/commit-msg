@@ -105,9 +105,10 @@ else
   checkMaxLength "COMMIT" 125 "$MESSAGE"
 fi
 
-### lint and prettier checks
+### build and lint checks
 npm run build
 
 path=$(pwd)
 git add "$path/lib/*"
+
 npm run pre-commit

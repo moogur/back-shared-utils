@@ -7,10 +7,12 @@
   "engines": {
     "node": "16"
   },
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "format": "prettier --write \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\"",
-    "lint": "eslint \"{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "build": "rm -fr lib && tsc --build && tscpaths -p tsconfig.json -s ./src -o ./lib && rm lib/tsconfig.tsbuildinfo",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
@@ -55,10 +57,13 @@
     "swagger-ui-express": "^4.5.0",
     "typeorm": "^0.3.8"
   },
+  "dependencies": {
+    "tscpaths": "^0.0.9"
+  },
   "lint-staged": {
-    "{const,dto,entity,exceptions,pipes,swagger,types,utils,validation,modules,configs}/**/*.{ts,json}": [
+    "src/**/*.ts": [
       "npm run lint",
-      "npm run format"
+      "git add"
     ]
   }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"noValidUserTokenException.js","sourceRoot":"","sources":["../../src/exceptions/noValidUserTokenException.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,yBAA0B,SAAQ,KAAK;IAC/B;IAAnB,YAAmB,YAAqB;QACtC,KAAK,EAAE,CAAC;QADS,iBAAY,GAAZ,YAAY,CAAS;IAExC,CAAC;CACF"}

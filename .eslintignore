@@ -1,5 +1,5 @@
 # compiled output
-/dist
+/lib
 /node_modules
 
 # Logs
@@ -44,4 +44,3 @@ tsconfig-checks.json
 .eslintignore
 .prettierignore
 webpack.config.js
-src/migrations

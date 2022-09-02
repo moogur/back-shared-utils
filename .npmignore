@@ -1,7 +1,10 @@
 .github
 .husky
 
+src
+
 .vscode
+.idea
 
 .eslintignore
 .prettierignore

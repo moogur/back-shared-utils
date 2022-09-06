@@ -58,7 +58,7 @@
     "class-validator": "^0.13.2",
     "lodash": "^4.17.21",
     "swagger-ui-express": "^4.5.0",
-    "typeorm": "^0.3.8"
+    "typeorm": "^0.3.9"
   },
   "lint-staged": {
     "src/**/*.ts": [

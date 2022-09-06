@@ -39,6 +39,6 @@ export enum ProcessEnvironmentKeys {
 }
 
 export enum GenderEnum {
-  Male = 'male',
-  Female = 'female',
+  Male = 'MALE',
+  Female = 'FEMALE',
 }

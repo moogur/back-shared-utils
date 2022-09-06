@@ -1,2 +1,2 @@
-export * from './baseCookieConfig';
-export * from './baseOrmconfig';
+export { baseCookieConfig } from './baseCookieConfig';
+export { baseOrmconfig } from './baseOrmconfig';

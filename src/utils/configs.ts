@@ -1,4 +1,4 @@
-import { WorkModeEnum } from 'types';
+import { WorkModeEnum } from '@types';
 
 interface GetCacheConfig {
   mode?: WorkModeEnum;

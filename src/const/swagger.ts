@@ -5,7 +5,7 @@ import {
   InternalServerErrorResponseDto,
   UnauthorizedResponseDto,
   UnprocessableEntityResponseDto,
-} from 'dto';
+} from '@dto';
 
 import { errorStatusMessages } from './messages';
 

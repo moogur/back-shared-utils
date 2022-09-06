@@ -34,7 +34,8 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.cjs', 'node_modules'],
   settings: {
-    'import/internal-regex': '^(const|dto|entity|exceptions|pipes|swagger|types|utils|validation|modules|configs)/?',
+    'import/internal-regex':
+      '^(@const|@dto|@entity|@exceptions|@pipes|@swagger|@types|@utils|@validation|@modules|@configs|@src)/?',
     'import/ignore': ['node_modules'],
   },
   rules: {

@@ -37,3 +37,8 @@ export enum ProcessEnvironmentKeys {
   ADMIN_SECRET = 'ADMIN_SECRET',
   SERVICE_TOKEN = 'SERVICE_TOKEN',
 }
+
+export enum GenderEnum {
+  Male = 'male',
+  Female = 'female',
+}

@@ -1,7 +1,7 @@
 import { HttpStatus, ValidationError } from '@nestjs/common';
 import { isArray, mapValues, reduce, values } from 'lodash';
 
-import { errorStatusMessages } from 'const';
+import { errorStatusMessages } from '@const';
 
 export function getValidationErrorMessageForResponseFront(
   errors: ValidationError[] | Record<string, string | string[]>,

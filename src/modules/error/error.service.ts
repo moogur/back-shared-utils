@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 
-import { getValidationErrorMessageForResponseFront } from 'utils';
+import { getValidationErrorMessageForResponseFront } from '@utils';
 
 @Injectable()
 export class ErrorService {

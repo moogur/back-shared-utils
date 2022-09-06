@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { replace } from 'lodash';
 
-import { WorkModeEnum } from 'types';
+import { WorkModeEnum } from '@types';
 
 import type { INestApplication } from '@nestjs/common';
 

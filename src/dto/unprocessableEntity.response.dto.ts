@@ -1,7 +1,7 @@
 import { HttpStatus } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
 
-import { errorStatusMessages } from 'const';
+import { errorStatusMessages } from '@src/const/messages';
 
 export class UnprocessableEntityResponseDto {
   @ApiProperty({ example: errorStatusMessages?.[HttpStatus.UNPROCESSABLE_ENTITY] })

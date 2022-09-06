@@ -106,9 +106,8 @@ else
 fi
 
 ### build and lint checks
-npm run build
-
 path=$(pwd)
-git add "$path/lib/*"
+
+npm run build && git add "$path/lib/*"
 
 npm run pre-commit

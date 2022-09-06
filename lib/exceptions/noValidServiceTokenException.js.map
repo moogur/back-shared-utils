@@ -1,1 +1,1 @@
-{"version":3,"file":"noValidServiceTokenException.js","sourceRoot":"","sources":["../../src/exceptions/noValidServiceTokenException.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,4BAA6B,SAAQ,KAAK;IAClC;IAAnB,YAAmB,YAAqB;QACtC,KAAK,EAAE,CAAC;QADS,iBAAY,GAAZ,YAAY,CAAS;IAExC,CAAC;CACF"}
+{"version":3,"file":"noValidServiceTokenException.js","sourceRoot":"","sources":["../../src/exceptions/noValidServiceTokenException.ts"],"names":[],"mappings":";;;AAAA,MAAa,4BAA6B,SAAQ,KAAK;IACrD,YAAmB,YAAqB;QACtC,KAAK,EAAE,CAAC;QADS,iBAAY,GAAZ,YAAY,CAAS;IAExC,CAAC;CACF;AAJD,oEAIC"}

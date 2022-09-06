@@ -3,7 +3,7 @@ import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 import { isNil } from 'lodash';
 
-import { getValidationErrorMessageForResponseFront } from 'utils';
+import { getValidationErrorMessageForResponseFront } from '@utils';
 
 export class BackendValidationPipe implements PipeTransform {
   async transform<T>(value: T, metadata: ArgumentMetadata) {

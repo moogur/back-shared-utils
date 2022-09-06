@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ESNext",
+    "target": "ES6",
     "sourceMap": true,
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": false,
-    "allowJs": false,
+    "allowJs": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
@@ -36,24 +36,27 @@
     "suppressExcessPropertyErrors": false,
     "suppressImplicitAnyIndexErrors": false,
     "noStrictGenericChecks": false,
+    "importHelpers": true,
     "typeRoots": [
       "node_modules/@types",
       "manual-typings"
     ],
     "paths": {
-      "const": ["src/const"],
-      "dto": ["src/dto"],
-      "entity": ["src/entity"],
-      "exceptions": ["src/exceptions"],
-      "pipes": ["src/pipes"],
-      "swagger": ["src/swagger"],
-      "types": ["src/types"],
-      "utils": ["src/utils"],
-      "validation": ["src/validation"],
-      "modules": ["src/modules"],
-      "configs": ["src/configs"]
+      "@const": ["src/const"],
+      "@dto": ["src/dto"],
+      "@entity": ["src/entity"],
+      "@exceptions": ["src/exceptions"],
+      "@pipes": ["src/pipes"],
+      "@swagger": ["src/swagger"],
+      "@types": ["src/types"],
+      "@utils": ["src/utils"],
+      "@validation": ["src/validation"],
+      "@modules": ["src/modules"],
+      "@configs": ["src/configs"],
+      "@src/*": ["src/*"]
     }
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "lib"

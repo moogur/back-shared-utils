@@ -1,8 +1,8 @@
 import { ceil } from 'lodash';
 import { Between, Like } from 'typeorm';
 
-import { maxDateTimestamp, minDateTimestamp } from 'const';
-import { SortingEnum } from 'types';
+import { maxDateTimestamp, minDateTimestamp } from '@const';
+import { SortingEnum } from '@types';
 
 export function getPaginationObject<T extends { pageSize?: number; pageNumber?: number }>(filter: T, total: number) {
   const pageSize = filter.pageSize ?? total;

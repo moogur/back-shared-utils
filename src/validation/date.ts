@@ -1,4 +1,4 @@
-import { getTimestamp } from 'utils';
+import { getTimestamp } from '@utils';
 
 export function getTransformToTimestamp(isoDate?: string | null) {
   if (typeof isoDate !== 'string') return isoDate;

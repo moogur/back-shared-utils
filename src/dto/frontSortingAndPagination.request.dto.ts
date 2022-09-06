@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 import { IsEnum, IsInt, ValidateIf } from 'class-validator';
 import { isUndefined, values } from 'lodash';
 
-import { SortingEnum } from 'types';
+import { SortingEnum } from '@types';
 
 export class FrontSortingAndPaginationRequestDto {
   @ApiPropertyOptional({ description: 'sorting direction', enum: values(SortingEnum) })

@@ -34,6 +34,6 @@ export declare enum ProcessEnvironmentKeys {
     SERVICE_TOKEN = "SERVICE_TOKEN"
 }
 export declare enum GenderEnum {
-    Male = "male",
-    Female = "female"
+    Male = "MALE",
+    Female = "FEMALE"
 }

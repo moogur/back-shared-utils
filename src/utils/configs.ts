@@ -1,12 +1,6 @@
 import { ProcessEnvironmentKeys, WorkModeEnum } from '@types';
 
-interface GetCacheConfig {
-  socketPath?: string;
-  url?: string;
-  password?: string;
-}
-
-export function getCacheConfig({ socketPath, password, url }: GetCacheConfig) {
+export function getCacheConfig() {
   const mode = process.env[ProcessEnvironmentKeys.Mode];
 
   const baseConfig: { type?: 'redis' | 'database' | 'ioredis' | 'ioredis/cluster'; duration: number } = {
@@ -17,19 +11,21 @@ export function getCacheConfig({ socketPath, password, url }: GetCacheConfig) {
   switch (true) {
     case !mode || mode === WorkModeEnum.Test:
       return false;
-    case Boolean(socketPath):
+    case Boolean(process.env[ProcessEnvironmentKeys.RedisSocketPath]):
       return {
         ...baseConfig,
         options: {
-          'socket.path': socketPath,
+          socket: {
+            path: process.env[ProcessEnvironmentKeys.RedisSocketPath],
+          },
         },
       };
-    case Boolean(url && password):
+    case Boolean(process.env[ProcessEnvironmentKeys.RedisUrl] && process.env[ProcessEnvironmentKeys.RedisPassword]):
       return {
         ...baseConfig,
         options: {
-          url: url,
-          password: password,
+          url: process.env[ProcessEnvironmentKeys.RedisUrl],
+          password: process.env[ProcessEnvironmentKeys.RedisPassword],
         },
       };
     default:

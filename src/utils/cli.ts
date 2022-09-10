@@ -7,7 +7,7 @@ export function exec(command: string) {
   try {
     return trim(childProcess.execSync(command).toString());
   } catch {
-    return;
+    return '';
   }
 }
 

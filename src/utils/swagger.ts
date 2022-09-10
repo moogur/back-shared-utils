@@ -1,35 +1,42 @@
-import { readFileSync } from 'node:fs';
-
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { replace } from 'lodash';
 
-import { WorkModeEnum } from '@types';
+import { ProcessEnvironmentKeys, WorkModeEnum } from '@types';
 
 import type { INestApplication } from '@nestjs/common';
 
-interface SetupSwagger {
-  app: INestApplication;
-  mode?: WorkModeEnum;
-  swaggerTitle: string;
-  swaggerDescription: string;
-  swaggerVersion: string;
-  needBearerAuth?: boolean;
+function getVersion() {
+  const appVersion = process.env[ProcessEnvironmentKeys.AppVersion];
+  const mode = process.env[ProcessEnvironmentKeys.Mode];
+
+  switch (mode) {
+    case WorkModeEnum.Production:
+      return appVersion ?? '0.0.0';
+
+    case WorkModeEnum.Development:
+      return 'development';
+
+    default:
+      return '';
+  }
 }
 
 export function setupSwagger({
   app,
-  mode,
   swaggerDescription,
   swaggerTitle,
-  swaggerVersion,
   needBearerAuth,
-}: SetupSwagger): void {
-  if (mode === WorkModeEnum.Test) return;
+}: {
+  app: INestApplication;
+  swaggerTitle: string;
+  swaggerDescription: string;
+  needBearerAuth?: boolean;
+}): void {
+  if (process.env[ProcessEnvironmentKeys.Mode] === WorkModeEnum.Test) return;
 
   const config = new DocumentBuilder()
     .setTitle(swaggerTitle)
     .setDescription(swaggerDescription)
-    .setVersion(swaggerVersion)
+    .setVersion(getVersion())
     .setExternalDoc('json', '/swagger-json');
 
   if (needBearerAuth)
@@ -42,18 +49,4 @@ export function setupSwagger({
 
   const document = SwaggerModule.createDocument(app, builderConfig);
   SwaggerModule.setup('swagger', app, document);
-}
-
-export function getVersion(filePath: string) {
-  try {
-    const data: { version?: string } = JSON.parse(readFileSync(filePath, 'utf8'));
-    const version = data?.version;
-    if (typeof version !== 'string') throw new Error('Version not found');
-
-    return replace(version, /[\sv]/g, '');
-  } catch (error) {
-    console.log(error);
-
-    return '0.0.0';
-  }
 }

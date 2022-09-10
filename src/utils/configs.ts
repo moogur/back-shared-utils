@@ -1,13 +1,14 @@
-import { WorkModeEnum } from '@types';
+import { ProcessEnvironmentKeys, WorkModeEnum } from '@types';
 
 interface GetCacheConfig {
-  mode?: WorkModeEnum;
   socketPath?: string;
   url?: string;
   password?: string;
 }
 
-export function getCacheConfig({ mode, socketPath, password, url }: GetCacheConfig) {
+export function getCacheConfig({ socketPath, password, url }: GetCacheConfig) {
+  const mode = process.env[ProcessEnvironmentKeys.Mode];
+
   const baseConfig: { type?: 'redis' | 'database' | 'ioredis' | 'ioredis/cluster'; duration: number } = {
     type: 'redis',
     duration: 60_000,

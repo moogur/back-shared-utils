@@ -1,11 +1,9 @@
-import { WorkModeEnum } from '../types';
 interface GetCacheConfig {
-    mode?: WorkModeEnum;
     socketPath?: string;
     url?: string;
     password?: string;
 }
-export declare function getCacheConfig({ mode, socketPath, password, url }: GetCacheConfig): false | {
+export declare function getCacheConfig({ socketPath, password, url }: GetCacheConfig): false | {
     options: {
         'socket.path': string | undefined;
         url?: undefined;

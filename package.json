@@ -12,11 +12,9 @@
     "lib/**/*"
   ],
   "scripts": {
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "rm -fr lib && tsc --build && tscpaths -p tsconfig.json -s ./src -o ./lib && rm lib/tsconfig.tsbuildinfo",
-    "pre-commit": "lint-staged",
-    "prepare": "husky install"
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",

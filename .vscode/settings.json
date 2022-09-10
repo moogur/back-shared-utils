@@ -5,7 +5,7 @@
     "node_modules": true,
     // "README.md": true,
     ".github": true,
-    "lib": true,
+    // "lib": true,
     ".idea": true
   },
   // todo color theme customization

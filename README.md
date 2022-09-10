@@ -38,20 +38,11 @@
 ### `dto`
 
 Общие dto
-Все dto разбиваются на 3 категории
-
-- `query.dto` - dto, используемые, если нужно описать входящие квери параметры
-- `request.dto` - dto, используемые, если нужно описать входящие параметры в теле запроса
-- `response.dto` - dto, используемые, если нужно описать исходящие параметры
 
 Список
 
-- `BadRequestResponseDto`, `InternalServerErrorResponseDto`, `UnauthorizedResponseDto`, `UnprocessableEntityResponseDto` - dto для использования в свагере, описывают общие http ошибки
-- `FrontSortingAndPaginationRequestDto` - базовая dto для описания фильтрации, сортировки и пагинации
-- `GetResultResponseDto` - если нужно возвратить результат успешности выполнения запроса
-- `OnlyIdQueryDto`, `OnlyIdResponseDto`, `OnlyNullableIdResponseDto` - базовые dto с одним параметром id для исползования в квери, теле запроса и ответа
-- `PaginatedResponseDto` - generic dto описывает возвращаемый ответ где используется пагинация
-- `PaginationResponseDto` - dto описывает саму пагинацию
+- `BaseRequestFrontSortingAndPagination` - базовая dto для описания фильтрации, сортировки и пагинации
+- `OnlyIdDto` - базовая dto с одним параметром id
 
 ### `entity`
 
@@ -82,9 +73,14 @@
 
 ### `swagger`
 
-Общие swagger утилиты, используемые для генерации
+Общие swagger утилиты, типы и тд. используемые для генерации
 
 - `ApiOkResponsePaginated` - позволяет отобразить ответ с использованием пагинации
+- `BadRequestError`, `InternalServerError`, `UnauthorizedError`, `UnprocessableEntityError` - типы которые, описывают общие http ошибки
+- `GetResult` - если нужно возвратить результат успешности выполнения запроса
+- `OnlyId`, `OnlyNullableId` - базовый тип с одним параметром id
+- `Paginated` - базовый generic тип описывает возвращаемый ответ где используется пагинация
+- `Pagination` - тип описывающий объект пагинации
 
 ### `types`
 

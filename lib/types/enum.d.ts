@@ -17,21 +17,22 @@ export declare enum UserEnum {
     Admin = "ADMIN"
 }
 export declare enum ProcessEnvironmentKeys {
-    PORT = "PORT",
-    DB_HOST = "DB_HOST",
-    DB_PORT = "DB_PORT",
-    DB_USER = "DB_USER",
-    DB_PASSWORD = "DB_PASSWORD",
-    DB_BASE = "DB_BASE",
-    MODE = "MODE",
-    REDIS_SOCKET_PATH = "REDIS_SOCKET_PATH",
-    REDIS_URL = "REDIS_URL",
-    REDIS_PASSWORD = "REDIS_PASSWORD",
-    ADMIN_USER = "ADMIN_USER",
-    ADMIN_PASSWORD = "ADMIN_PASSWORD",
-    USER_SECRET = "USER_SECRET",
-    ADMIN_SECRET = "ADMIN_SECRET",
-    SERVICE_TOKEN = "SERVICE_TOKEN"
+    Port = "PORT",
+    DatabaseHost = "DB_HOST",
+    DatabasePort = "DB_PORT",
+    DatabaseUser = "DB_USER",
+    DatabasePassword = "DB_PASSWORD",
+    DatabaseBase = "DB_BASE",
+    Mode = "MODE",
+    RedisSocketPath = "REDIS_SOCKET_PATH",
+    RedisUrl = "REDIS_URL",
+    RedisPassword = "REDIS_PASSWORD",
+    AdminUser = "ADMIN_USER",
+    AdminPassword = "ADMIN_PASSWORD",
+    AdminSecret = "ADMIN_SECRET",
+    UserSecret = "USER_SECRET",
+    ServiceToken = "SERVICE_TOKEN",
+    AppVersion = "APP_VERSION"
 }
 export declare enum GenderEnum {
     Male = "MALE",

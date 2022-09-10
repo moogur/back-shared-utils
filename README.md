@@ -91,6 +91,26 @@
 - `WorkModeEnum` - список режимов, в которых может работать приложение
 - `UserEnum` - типы пользователя
 - `ProcessEnvironmentKeys` - список всех ключей (process.env) во всех сервисах
+
+```typescript
+  Port = 'PORT',
+  DatabaseHost = 'DB_HOST',
+  DatabasePort = 'DB_PORT',
+  DatabaseUser = 'DB_USER',
+  DatabasePassword = 'DB_PASSWORD',
+  DatabaseBase = 'DB_BASE',
+  Mode = 'MODE',
+  RedisSocketPath = 'REDIS_SOCKET_PATH',
+  RedisUrl = 'REDIS_URL',
+  RedisPassword = 'REDIS_PASSWORD',
+  AdminUser = 'ADMIN_USER',
+  AdminPassword = 'ADMIN_PASSWORD',
+  AdminSecret = 'ADMIN_SECRET',
+  UserSecret = 'USER_SECRET',
+  ServiceToken = 'SERVICE_TOKEN',
+  AppVersion = 'APP_VERSION',
+```
+
 - `GenderEnum` - пол пользователя или другого живого существа
 
 - `TupleUnion` - возвращает кортеж, в котором нужно описать все ключи по одному разу
@@ -106,7 +126,6 @@
 - `getEntity` - декоратор, возвращает либо сущность, либо поле из этой сущность
 - `getValidationErrorMessageForResponseFront` - форматирует переданные ошибки в один используемый формат - Record\<string, string[]\>
 - `authGuardHelper` - защитник, используется если нужно работать с авторизованным пользователем
-- `getVersion` - возвращает версию (последний тег), для использования в свагере
 - `setupSwagger` - устанавливает настройки свагера
 - `getPaginationObject` - возвращает объект пагинации для отправки на фронт
 - `preparePagination`, `prepareSorting`, `prepareLike`, `prepareBetween` - форматирует данные для использования в методах поиска typeorm по базе данных

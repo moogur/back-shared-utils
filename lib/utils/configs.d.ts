@@ -1,11 +1,8 @@
-interface GetCacheConfig {
-    socketPath?: string;
-    url?: string;
-    password?: string;
-}
-export declare function getCacheConfig({ socketPath, password, url }: GetCacheConfig): false | {
+export declare function getCacheConfig(): false | {
     options: {
-        'socket.path': string | undefined;
+        socket: {
+            path: string | undefined;
+        };
         url?: undefined;
         password?: undefined;
     };
@@ -15,9 +12,8 @@ export declare function getCacheConfig({ socketPath, password, url }: GetCacheCo
     options: {
         url: string | undefined;
         password: string | undefined;
-        'socket.path'?: undefined;
+        socket?: undefined;
     };
     type?: "redis" | "database" | "ioredis" | "ioredis/cluster" | undefined;
     duration: number;
 };
-export {};

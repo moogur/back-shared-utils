@@ -6,3 +6,7 @@ export const errorStatusMessages = {
   [HttpStatus.UNPROCESSABLE_ENTITY]: 'Bad request',
   [HttpStatus.BAD_REQUEST]: 'Bad request',
 } as const;
+
+export const customErrorStatusMessages = {
+  [HttpStatus.BAD_REQUEST]: 'Payload should not be empty',
+} as const;

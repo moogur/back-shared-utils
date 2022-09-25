@@ -1,7 +1,7 @@
 import childProcess from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import { forEach, split, trim, replace, keys } from 'lodash';
+import { forEach, split, trim, replace, keys, reduce, assign } from 'lodash';
 
 export function exec(command: string) {
   try {
@@ -11,19 +11,23 @@ export function exec(command: string) {
   }
 }
 
+function getKeyAndValue(line: string) {
+  const trimmedLine = trim(line);
+  if (!trimmedLine || trimmedLine[0] === '#') return [];
+
+  return split(trimmedLine, '=');
+}
+
 export function setVariablesOutOfEnvironmentString(content: string) {
   const lines = split(content, '\n');
   forEach(lines, (line) => {
-    const trimmedLine = trim(line);
-    if (!trimmedLine || trimmedLine[0] === '#') return;
-    const [key, value] = split(trimmedLine, '=');
-    if (key && value) {
-      process.env[key] = value;
-    }
+    const [key, value] = getKeyAndValue(line);
+    if (!key || !value) return;
+    process.env[key] = value;
   });
 }
 
-export function setEnvironments(filePaths: string[]) {
+export function setEnvironments(...filePaths: string[]) {
   forEach(filePaths, (filePath) => {
     try {
       const content = readFileSync(filePath, 'utf8');
@@ -46,4 +50,35 @@ export function saveEnvironmentsInFile(filePath: string, data: Record<string, st
     console.log(error);
     throw error;
   }
+}
+
+export function getObjectEnvironments(content: string) {
+  return reduce<string, Record<string, string>>(
+    split(content, '\n'),
+    (accumulator, line) => {
+      const [key, value] = getKeyAndValue(line);
+      if (key && value) accumulator[key] = value;
+
+      return accumulator;
+    },
+    {},
+  );
+}
+
+export function getEnvironmentsFromFiles(...filePaths: string[]) {
+  return reduce<string, Record<string, string>>(
+    filePaths,
+    (accumulator, filePath) => {
+      try {
+        const content = readFileSync(filePath, 'utf8');
+
+        assign(accumulator, getObjectEnvironments(content));
+      } catch (error) {
+        console.log(error);
+      } finally {
+        return accumulator;
+      }
+    },
+    {},
+  );
 }

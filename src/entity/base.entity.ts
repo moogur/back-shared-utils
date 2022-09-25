@@ -11,12 +11,12 @@ export abstract class BaseEntity {
   updatedDate: number | null;
 
   @BeforeInsert()
-  protected beforeInsert() {
+  protected baseBeforeInsert() {
     this.createdDate = Math.floor(Date.now() / 1000);
   }
 
   @BeforeUpdate()
-  protected beforeUpdate() {
+  protected baseBeforeUpdate() {
     this.updatedDate = Math.floor(Date.now() / 1000);
   }
 }

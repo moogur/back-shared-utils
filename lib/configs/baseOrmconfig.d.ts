@@ -2,7 +2,7 @@ export declare const baseOrmconfig: {
     readonly type: "postgres";
     readonly useUTC: true;
     readonly synchronize: false;
-    readonly migrationsRun: true;
+    readonly migrationsRun: false;
     readonly host: string | undefined;
     readonly port: number;
     readonly username: string | undefined;

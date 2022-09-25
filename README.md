@@ -33,6 +33,7 @@
 - `minDateIso, minDateTimestamp` - минимально возможная дата
 - `maxDateIso, maxDateTimestamp` - максимально возможная дата
 - `errorStatusMessages` - стандартные сообщения об ошибках для используемых http ответов
+- `customErrorStatusMessages` - пользовательские сообщения об ошибках для используемых http ответов
 - `unauthorizedErrorTypeSwagger, internalServerErrorTypeSwagger, unprocessableEntityErrorSwagger, badRequestErrorSwagger` - стандартные сообщения об ошибках для использования в свагере
 
 ### `dto`
@@ -69,7 +70,8 @@
 
 Общие nestjs пайпы
 
-- `BackendValidationPipe` - валидационный пайп для фходящих значений, форматирующий ошибки в формат - Record\<string, string[]\>
+- `BackendValidationPipe` - форматирует ошибки в формат - Record\<string, string[]\>, при возвращении ответа. Позволяет валидировать на пустой объект `isEmpty` и возвращать либо входные данные либо преобразованные `transform`
+- `ValidatePayloadExistsPipe` - проверяет, что в объекте есть хотя одно поле (он не пустой)
 
 ### `swagger`
 
@@ -104,7 +106,7 @@
   RedisUrl = 'REDIS_URL',
   RedisPassword = 'REDIS_PASSWORD',
   AdminUser = 'ADMIN_USER',
-  AdminPassword = 'ADMIN_PASSWORD',
+  AdminPassword = 'ADMIN_DEFAULT_PASSWORD',
   AdminSecret = 'ADMIN_SECRET',
   UserSecret = 'USER_SECRET',
   ServiceToken = 'SERVICE_TOKEN',
@@ -119,7 +121,7 @@
 
 Разные полезные функции
 
-- `setVariablesOutOfEnvironmentString`, `setEnvironments`, `saveEnvironmentsInFile` - работа с env файлами
+- `setVariablesOutOfEnvironmentString`, `setEnvironments`, `saveEnvironmentsInFile`, `getObjectEnvironments`, `getEnvironmentsFromFiles` - работа с env файлами
 - `exec` - возвращает результат выполнения переданной команды, на языке bash
 - `getCacheConfig` - возвращает cash настройки для typeorm
 - `getISODate`, `getNullableISODate`, `getTimestamp` - работа с датой

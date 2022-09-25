@@ -28,7 +28,7 @@ export declare enum ProcessEnvironmentKeys {
     RedisUrl = "REDIS_URL",
     RedisPassword = "REDIS_PASSWORD",
     AdminUser = "ADMIN_USER",
-    AdminPassword = "ADMIN_PASSWORD",
+    AdminPassword = "ADMIN_DEFAULT_PASSWORD",
     AdminSecret = "ADMIN_SECRET",
     UserSecret = "USER_SECRET",
     ServiceToken = "SERVICE_TOKEN",

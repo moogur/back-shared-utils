@@ -4,7 +4,7 @@ export const baseOrmconfig = {
   type: 'postgres',
   useUTC: true,
   synchronize: false,
-  migrationsRun: true,
+  migrationsRun: false,
   host: process.env[ProcessEnvironmentKeys.DatabaseHost],
   port: Number(process.env[ProcessEnvironmentKeys.DatabasePort]),
   username: process.env[ProcessEnvironmentKeys.DatabaseUser],

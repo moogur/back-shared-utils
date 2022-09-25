@@ -1,4 +1,11 @@
 import { ArgumentMetadata, PipeTransform } from '@nestjs/common';
-export declare class BackendValidationPipe implements PipeTransform {
-    transform<T>(value: T, metadata: ArgumentMetadata): Promise<T>;
+interface Config {
+    transform: boolean;
+    isEmpty: boolean;
 }
+export declare class BackendValidationPipe implements PipeTransform {
+    private config;
+    constructor(config?: Partial<Config>);
+    transform<T>(value: T, metadata: ArgumentMetadata): Promise<any>;
+}
+export {};

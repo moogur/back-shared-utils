@@ -4,3 +4,6 @@ export declare const errorStatusMessages: {
     readonly 422: "Bad request";
     readonly 400: "Bad request";
 };
+export declare const customErrorStatusMessages: {
+    readonly 400: "Payload should not be empty";
+};

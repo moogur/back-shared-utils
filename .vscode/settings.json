@@ -31,5 +31,6 @@
   // },
   // "peacock.color": "#eb5424",
   "jest.autoRun": "off",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "terminal.integrated.defaultProfile.osx": "bash_node_16"
 }

@@ -1,5 +1,5 @@
 import { ceil } from 'lodash';
-import { Between, Like } from 'typeorm';
+import { ArrayContains, Between, Like } from 'typeorm';
 
 import { maxDateTimestamp, minDateTimestamp } from '@const';
 import { SortingEnum } from '@types';
@@ -38,4 +38,10 @@ export function prepareLike<T>(value?: T) {
 
 export function prepareBetween(from?: number, to?: number) {
   return Between(from ?? minDateTimestamp, to ?? maxDateTimestamp);
+}
+
+export function prepareArrayContains<T>(value: T) {
+  if (!value) return;
+
+  return ArrayContains([value]);
 }

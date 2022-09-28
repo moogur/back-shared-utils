@@ -1,0 +1,1 @@
+{"version":3,"file":"authorizationApi.js","sourceRoot":"","sources":["../../../src/api/authorizationApi/authorizationApi.ts"],"names":[],"mappings":";;;AAIA,wCAAqC;AAErC,MAAa,gBAAiB,SAAQ,iBAAO;IACpC,aAAa,CAAC,MAA2B;QAC9C,OAAO,IAAI,CAAC,OAAO,iBACjB,MAAM,EAAE,KAAK,EACb,GAAG,EAAE,wBAAwB,IAC1B,MAAM,EACT,CAAC;IACL,CAAC;CACF;AARD,4CAQC"}

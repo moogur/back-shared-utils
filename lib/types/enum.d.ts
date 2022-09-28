@@ -32,6 +32,7 @@ export declare enum ProcessEnvironmentKeys {
     AdminSecret = "ADMIN_SECRET",
     UserSecret = "USER_SECRET",
     ServiceToken = "SERVICE_TOKEN",
+    ServiceTokenFilePath = "SERVICE_TOKEN_FILE_PATH",
     AppVersion = "APP_VERSION"
 }
 export declare enum GenderEnum {

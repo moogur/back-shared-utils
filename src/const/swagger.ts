@@ -1,6 +1,6 @@
 import { HttpStatus } from '@nestjs/common';
 
-import { BadRequestError, InternalServerError, UnauthorizedError, UnprocessableEntityError } from '@swagger';
+import { BadRequestError, InternalServerError, OnlyId, UnauthorizedError, UnprocessableEntityError } from '@swagger';
 
 import { errorStatusMessages } from './messages';
 
@@ -27,3 +27,7 @@ export const badRequestErrorSwagger = {
   type: BadRequestError,
   description: errorStatusMessages[HttpStatus.BAD_REQUEST],
 } as const;
+
+export const createEntityResponseOnlyIdSwagger = { status: HttpStatus.CREATED, type: OnlyId } as const;
+
+export const okEntityResponseOnlyIdSwagger = { status: HttpStatus.OK, type: OnlyId } as const;

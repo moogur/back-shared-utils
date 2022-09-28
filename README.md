@@ -7,16 +7,29 @@
 Необходимо наличие данных npm пакетов
 
 ```npm
-"@nestjs/common": "^9.0.0",
-"@nestjs/swagger": "^6.1.0",
-"class-transformer": "^0.5.1",
-"class-validator": "^0.13.2",
-"lodash": "^4.17.21",
-"swagger-ui-express": "^4.5.0",
-"typeorm": "^0.3.9"
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.1.0",
+    "axios": "0.27.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.5.0",
+    "typeorm": "^0.3.9"
 ```
 
 ## Компоненты
+
+### `api`
+
+Общие сервисы запросов
+
+- `baseUrls` - базовые (префикс) адреса запросов
+- `BaseApi` - класс базового сервиса
+- `authorizationService` - сервис авторизации
 
 ### `configs`
 
@@ -30,11 +43,19 @@
 Разные константы для всех сервисов
 
 - `invalidCharacter` - символ, который добавляется, если нужно сделать поле не валидным, например при удалении пользователя, поля email, username, password помечаются этом символом
-- `minDateIso, minDateTimestamp` - минимально возможная дата
-- `maxDateIso, maxDateTimestamp` - максимально возможная дата
+- `minDateIso`, `minDateTimestamp` - минимально возможная дата
+- `maxDateIso`, `maxDateTimestamp` - максимально возможная дата
 - `errorStatusMessages` - стандартные сообщения об ошибках для используемых http ответов
 - `customErrorStatusMessages` - пользовательские сообщения об ошибках для используемых http ответов
-- `unauthorizedErrorTypeSwagger, internalServerErrorTypeSwagger, unprocessableEntityErrorSwagger, badRequestErrorSwagger` - стандартные сообщения об ошибках для использования в свагере
+- `customErrorMessages` - пользовательские сообщения об ошибках
+- `unauthorizedErrorTypeSwagger`, `internalServerErrorTypeSwagger`, `unprocessableEntityErrorSwagger`, `badRequestErrorSwagger` - стандартные сообщения об ошибках для использования в свагере
+- `createEntityResponseOnlyIdSwagger`, `okEntityResponseOnlyIdSwagger` - пользовательские сообщения для использования в свагере
+
+### `decorators`
+
+Общие декораторы для сервисов
+
+- `UserId` - возвращает id пользователя или null (поле - userId)
 
 ### `dto`
 
@@ -59,6 +80,19 @@
 - `NoValidServiceTokenException` - используется, если системный токен не валиден
 - `NoValidUserTokenException` - используется, если пользовательский или админский токен не валиден
 - `DecodeTokenException` - используется, если произошла ошибка при декодировании токена
+- `ApiException` - используется, если произошла ошибка в запросах (axios)
+
+### `guards`
+
+Общие guards
+
+- `AuthGuard` - авторизационный guard для всех запросов во всех сервисах, кроме сервиса authorization
+
+### `middlewares`
+
+Общие middlewares
+
+- `AuthMiddleware` - авторизационная middleware для всех запросов во всех сервисах, кроме сервиса authorization
 
 ### `modules`
 
@@ -110,12 +144,14 @@
   AdminSecret = 'ADMIN_SECRET',
   UserSecret = 'USER_SECRET',
   ServiceToken = 'SERVICE_TOKEN',
+  ServiceTokenFilePath = 'SERVICE_TOKEN_FILE_PATH',
   AppVersion = 'APP_VERSION',
 ```
 
 - `GenderEnum` - пол пользователя или другого живого существа
-
 - `TupleUnion` - возвращает кортеж, в котором нужно описать все ключи по одному разу
+- `ResponseData` - тип, который возвращается при успешном выполнении запроса
+- `ExpressWithUserIdRequestType` - обновленные тип Request из библиотеки express
 
 ### `utils`
 
@@ -130,7 +166,7 @@
 - `authGuardHelper` - защитник, используется если нужно работать с авторизованным пользователем
 - `setupSwagger` - устанавливает настройки свагера
 - `getPaginationObject` - возвращает объект пагинации для отправки на фронт
-- `preparePagination`, `prepareSorting`, `prepareLike`, `prepareBetween` - форматирует данные для использования в методах поиска typeorm по базе данных
+- `preparePagination`, `prepareSorting`, `prepareLike`, `prepareBetween`, `prepareArrayContains` - форматирует данные для использования в методах поиска typeorm по базе данных
 
 ### `validation`
 

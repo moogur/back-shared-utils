@@ -25,3 +25,4 @@ export declare function prepareSorting<T extends {
 };
 export declare function prepareLike<T>(value?: T): import("typeorm").FindOperator<string> | undefined;
 export declare function prepareBetween(from?: number, to?: number): import("typeorm").FindOperator<number>;
+export declare function prepareArrayContains<T>(value: T): import("typeorm").FindOperator<any> | undefined;

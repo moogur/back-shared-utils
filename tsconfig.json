@@ -42,6 +42,10 @@
       "manual-typings"
     ],
     "paths": {
+      "@api": ["src/api"],
+      "@decorators": ["src/decorators"],
+      "@middlewares": ["src/middlewares"],
+      "@guards": ["src/guards"],
       "@const": ["src/const"],
       "@dto": ["src/dto"],
       "@entity": ["src/entity"],

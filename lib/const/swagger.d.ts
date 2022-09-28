@@ -1,5 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
-import { BadRequestError, InternalServerError, UnauthorizedError, UnprocessableEntityError } from '../swagger';
+import { BadRequestError, InternalServerError, OnlyId, UnauthorizedError, UnprocessableEntityError } from '../swagger';
 export declare const unauthorizedErrorTypeSwagger: {
     readonly status: HttpStatus.UNAUTHORIZED;
     readonly type: typeof UnauthorizedError;
@@ -19,4 +19,12 @@ export declare const badRequestErrorSwagger: {
     readonly status: HttpStatus.BAD_REQUEST;
     readonly type: typeof BadRequestError;
     readonly description: "Bad request";
+};
+export declare const createEntityResponseOnlyIdSwagger: {
+    readonly status: HttpStatus.CREATED;
+    readonly type: typeof OnlyId;
+};
+export declare const okEntityResponseOnlyIdSwagger: {
+    readonly status: HttpStatus.OK;
+    readonly type: typeof OnlyId;
 };
